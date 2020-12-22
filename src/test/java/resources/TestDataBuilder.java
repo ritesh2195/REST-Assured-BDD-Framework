@@ -28,4 +28,9 @@ public class TestDataBuilder {
 
         return addPlace;
     }
+
+    public String deletePlacePayLoad(String placeId){
+
+        return "\"place_id\":\""+placeId+"\"";
+    }
 }

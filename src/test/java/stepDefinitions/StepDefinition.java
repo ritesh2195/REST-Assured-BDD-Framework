@@ -25,12 +25,12 @@ import static io.restassured.RestAssured.*;
 import static io.restassured.RestAssured.requestSpecification;
 import static org.junit.Assert.*;
 
-public class addPlaceAPI extends Utils {
+public class StepDefinition extends Utils {
 
     RequestSpecification requestSpec;
     Response response;
     ResponseSpecification responseSpecification;
-    String placeId;
+    static String place_Id;
     TestDataBuilder addPlace = new TestDataBuilder();
 
     @Given("Add Place payload with {string} {string} {string}")
@@ -72,20 +72,22 @@ public class addPlaceAPI extends Utils {
 
         String res = response.asString();
 
+        System.out.println("response body is "+response);
+
         JsonPath jsonPath = new JsonPath(res);
 
         assertEquals(jsonPath.getString(actual),expected);
 
         System.out.println(res);
 
-        placeId = jsonPath.getString("place_id");
+        place_Id = jsonPath.getString("place_id");
 
     }
 
     @And("verify place_id created maps to {string} using {string}")
     public void verify_place_id_created_maps_to_using_get_place_api(String expName, String resources ) throws IOException {
 
-        requestSpec = given().spec(requestSpecification()).queryParam("place_id", placeId);
+        requestSpec = given().spec(requestSpecification()).queryParam("place_id", place_Id);
 
         APIResources apiResources = APIResources.valueOf(resources);
 
@@ -96,6 +98,13 @@ public class addPlaceAPI extends Utils {
         String actName = getJsonParse("name", response);
 
         assertEquals(expName,actName);
+
+    }
+
+    @Given("DeletePlace payload")
+    public void delete_place_payload() throws IOException {
+
+        requestSpec = given().spec(requestSpecification()).body(addPlace.deletePlacePayLoad(place_Id));
 
     }
 }
