@@ -1,12 +1,9 @@
 package stepDefinitions;
 
-import Pojo.AddPlace;
-import Pojo.AddPlaceLocation;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -17,12 +14,9 @@ import resources.APIResources;
 import resources.TestDataBuilder;
 import resources.Utils;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 import static io.restassured.RestAssured.*;
-import static io.restassured.RestAssured.requestSpecification;
 import static org.junit.Assert.*;
 
 public class StepDefinition extends Utils {
