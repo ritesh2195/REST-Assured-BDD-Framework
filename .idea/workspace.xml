@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92c04f0a-9cab-40e6-95bc-8f3c4fd5de1b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logging.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logging.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resources/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/StepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/StepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/resources/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/resources/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/stepDefinitions/StepDefinition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/stepDefinitions/StepDefinition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/SparkReport/Spark.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/SparkReport/Spark.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/SparkReport/report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/SparkReport/report.pdf" afterDir="false" />
-    </list>
+    <list default="true" id="92c04f0a-9cab-40e6-95bc-8f3c4fd5de1b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
