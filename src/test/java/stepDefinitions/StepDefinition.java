@@ -36,15 +36,13 @@ public class StepDefinition extends Utils {
     @When("user calls {string} with http {string} request")
     public void user_calls_with_http_post_request(String resources,String method) {
 
-        responseSpecification =  new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
-
         APIResources apiResources = APIResources.valueOf(resources);
 
         String res =apiResources.getResources();
 
         if (method.equalsIgnoreCase("POST")) {
 
-            response = requestSpec.when().post(res).then().spec(responseSpecification).extract().response();
+            response = requestSpec.when().post(res).then().spec(responseSpecification()).extract().response();
 
         }
 
@@ -85,7 +83,7 @@ public class StepDefinition extends Utils {
 
         APIResources apiResources = APIResources.valueOf(resources);
 
-        response = requestSpec.when().post(apiResources.getResources()).then().spec(responseSpecification).extract().response();
+        response = requestSpec.when().post(apiResources.getResources()).then().spec(responseSpecification()).extract().response();
 
         String string_response = response.asString();
 

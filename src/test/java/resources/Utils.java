@@ -2,12 +2,14 @@ package resources;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 
 import java.io.*;
 import java.util.Properties;
@@ -35,6 +37,13 @@ public class Utils {
         }
 
         return req;
+    }
+
+    public ResponseSpecification responseSpecification(){
+
+        ResponseSpecification responseSpecification =  new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+
+        return responseSpecification;
     }
 
     public String getGlobalProperties(String key) throws IOException {
