@@ -64,8 +64,6 @@ public class StepDefinition extends Utils {
 
         String res = response.asString();
 
-        System.out.println("response body is "+response);
-
         JsonPath jsonPath = new JsonPath(res);
 
         assertEquals(jsonPath.getString(actual),expected);
@@ -83,9 +81,11 @@ public class StepDefinition extends Utils {
 
         APIResources apiResources = APIResources.valueOf(resources);
 
-        response = requestSpec.when().post(apiResources.getResources()).then().spec(responseSpecification()).extract().response();
+        response = requestSpec.when().get(apiResources.getResources()).then().spec(responseSpecification()).extract().response();
 
         String string_response = response.asString();
+
+        System.out.println(string_response);
 
         String actName = getJsonParse("name", response);
 
