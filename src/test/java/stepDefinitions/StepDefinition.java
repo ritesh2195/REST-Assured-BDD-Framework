@@ -10,6 +10,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import org.junit.Assert;
 import resources.APIResources;
 import resources.TestDataBuilder;
 import resources.Utils;
@@ -42,13 +43,13 @@ public class StepDefinition extends Utils {
 
         if (method.equalsIgnoreCase("POST")) {
 
-            response = requestSpec.when().post(res).then().spec(responseSpecification()).extract().response();
+            response = requestSpec.when().post(res).then().extract().response();
 
         }
 
         else if (method.equalsIgnoreCase("GET")){
 
-            response = requestSpec.when().get(res).then().spec(responseSpecification).extract().response();
+            response = requestSpec.when().get(res).then().extract().response();
         }
     }
     @Then("API call should be successful with status code {int}")
@@ -81,7 +82,9 @@ public class StepDefinition extends Utils {
 
         APIResources apiResources = APIResources.valueOf(resources);
 
-        response = requestSpec.when().get(apiResources.getResources()).then().spec(responseSpecification()).extract().response();
+        response = requestSpec.when().get(apiResources.getResources()).then().extract().response();
+
+        Assert.assertEquals("application/json;charset=UTF-8", response.getContentType());
 
         String string_response = response.asString();
 
